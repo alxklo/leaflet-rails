@@ -5,6 +5,7 @@ module Leaflet
   mattr_accessor :tile_layer
   mattr_accessor :attribution
   mattr_accessor :max_zoom
+  mattr_accessor :style_id
 
   module Rails
     class Engine < ::Rails::Engine

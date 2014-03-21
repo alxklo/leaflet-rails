@@ -5,6 +5,7 @@ module Leaflet
       options[:tile_layer] ||= Leaflet.tile_layer
       options[:attribution] ||= Leaflet.attribution
       options[:max_zoom] ||= Leaflet.max_zoom
+      options[:style_id] ||= Leaflet.style_id
       options[:container_id] ||= 'map'
 
       output = []
@@ -33,7 +34,8 @@ module Leaflet
 
       output << "L.tileLayer('#{options[:tile_layer]}', {
           attribution: '#{options[:attribution]}',
-          maxZoom: #{options[:max_zoom]}
+          maxZoom: #{options[:max_zoom]},
+          styleId: #{options[:style_id]}
       }).addTo(map)"
       output << "</script>"
       output.join("\n").html_safe
